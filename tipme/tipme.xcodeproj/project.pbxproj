@@ -14,6 +14,7 @@
 		693DCC821D95D2BD0005097C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 693DCC811D95D2BD0005097C /* Images.xcassets */; };
 		693DCC851D95D2BD0005097C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 693DCC831D95D2BD0005097C /* LaunchScreen.xib */; };
 		693DCC911D95D2BD0005097C /* tipmeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693DCC901D95D2BD0005097C /* tipmeTests.swift */; };
+		694FCE8E1D98B58600A259F3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FCE8D1D98B58600A259F3 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		693DCC8A1D95D2BD0005097C /* tipmeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipmeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		693DCC8F1D95D2BD0005097C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		693DCC901D95D2BD0005097C /* tipmeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipmeTests.swift; sourceTree = "<group>"; };
+		694FCE8D1D98B58600A259F3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				693DCC771D95D2BD0005097C /* AppDelegate.swift */,
 				693DCC7C1D95D2BD0005097C /* ViewController.swift */,
 				693DCC7E1D95D2BD0005097C /* Main.storyboard */,
+				694FCE8D1D98B58600A259F3 /* SettingsViewController.swift */,
 				693DCC811D95D2BD0005097C /* Images.xcassets */,
 				693DCC831D95D2BD0005097C /* LaunchScreen.xib */,
 				693DCC791D95D2BD0005097C /* tipme.xcdatamodeld */,
@@ -159,7 +162,9 @@
 		693DCC6A1D95D2BD0005097C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Prerna Vij";
 				TargetAttributes = {
 					693DCC711D95D2BD0005097C = {
@@ -218,6 +223,7 @@
 				693DCC7D1D95D2BD0005097C /* ViewController.swift in Sources */,
 				693DCC781D95D2BD0005097C /* AppDelegate.swift in Sources */,
 				693DCC7B1D95D2BD0005097C /* tipme.xcdatamodeld in Sources */,
+				694FCE8E1D98B58600A259F3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +285,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -342,6 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tipme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vijs.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -352,6 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = tipme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vijs.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -370,6 +379,7 @@
 				);
 				INFOPLIST_FILE = tipmeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vijs.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tipme.app/tipme";
 			};
@@ -385,6 +395,7 @@
 				);
 				INFOPLIST_FILE = tipmeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vijs.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tipme.app/tipme";
 			};
@@ -409,6 +420,7 @@
 				693DCC961D95D2BD0005097C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		693DCC971D95D2BD0005097C /* Build configuration list for PBXNativeTarget "tipmeTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +429,7 @@
 				693DCC991D95D2BD0005097C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

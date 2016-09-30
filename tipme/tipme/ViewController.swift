@@ -10,45 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func billIn(sender: AnyObject) {
+        calculateTip()
+    }
+    
     @IBOutlet weak var tipLabel: UITextField!
     @IBOutlet weak var totalLabel: UITextField!
     @IBOutlet weak var billLabel: UITextField!
-    @IBOutlet weak var tipSelector: UISegmentedControl!
     @IBOutlet weak var billValue: UITextField!
-    @IBOutlet weak var customTipField: UITextField!
     
-    
-    @IBAction func customTipSet(sender: AnyObject) {
-        var tipValue = (customTipField.text as NSString).doubleValue / 100
-        calculateTip(tipValue)
+    func getTip() -> Double {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let tipValue = defaults.doubleForKey("tipValueKey")
+        return tipValue
     }
     
-    @IBAction func tipSelected(sender: AnyObject) {
-        
-        let tipOptions = [0.18, 0.2, 0.25]
-        var tipValue:Double
-        customTipField.hidden = true;
-        customTipField.enabled = false;
-        
-        if (tipSelector.selectedSegmentIndex == 3) {
-            customTipField.hidden = false;
-            customTipField.enabled = true;
-            tipValue = (customTipField.text as NSString).doubleValue / 100
-        }
-        else
-        {
-            tipValue = tipOptions[tipSelector.selectedSegmentIndex]
-        }
-        
-        calculateTip(tipValue)
-    }
-    
-    
-    func calculateTip(tipValue:Double) {
-        print (tipValue)
-        let bill:Double = (billLabel.text as NSString).doubleValue
+    func calculateTip() {
+        let tipValue = getTip()
+        let bill:Double = (billLabel.text! as NSString).doubleValue
         let tip:Double = tipValue*bill
         let total:Double = bill + tip
+        
         tipLabel.text = String(format: "%.2f",tip)
         totalLabel.text = String(format: "%.2f",total)
     }
@@ -56,8 +38,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        customTipField.hidden = true;
-        tipSelector.selectedSegmentIndex = 0
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(handleTipSaved(_:)), name:"tipSaved", object: nil)
+        
+        self.tipLabel.enabled = false
+        self.totalLabel.enabled = false
+
+        if(getTip() != -1){
+            calculateTip();
+        }
+    }
+    
+    func handleTipSaved(notification: NSNotification){
+        if(getTip() != -1){
+            calculateTip();
+        }
     }
 
     override func didReceiveMemoryWarning() {
